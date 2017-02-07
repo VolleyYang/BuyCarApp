@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+
+    <FrameLayout
+        android:id="@+id/replace"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <RadioGroup
+        android:layout_weight="7"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/rbt_home"
+            android:drawableTop="@drawable/selector_home"
+            android:checked="true"
+            android:textStyle="bold"
+            android:text="首页 "
+            android:textColor="@drawable/color_radiobutton"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/rbt_share"
+            android:text="批量分享"
+            android:textStyle="bold"
+            android:textColor="@drawable/color_radiobutton"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_share"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/rbt_my"
+            android:text="我的"
+            android:textStyle="bold"
+            android:textColor="@drawable/color_radiobutton"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_mine"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </RadioGroup>
+</LinearLayout>
