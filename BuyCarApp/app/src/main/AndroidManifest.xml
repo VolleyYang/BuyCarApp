@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".home.second.SecondBannerAty"></activity>
+        <activity android:name=".home.second.zhengbei.ZbAty"></activity>
     </application>
 
 </manifest>

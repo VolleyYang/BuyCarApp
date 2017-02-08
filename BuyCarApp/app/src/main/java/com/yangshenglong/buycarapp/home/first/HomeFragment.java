@@ -1,11 +1,13 @@
-package com.yangshenglong.buycarapp.home;
+package com.yangshenglong.buycarapp.home.first;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.yangshenglong.buycarapp.R;
 import com.yangshenglong.buycarapp.base.BaseFragment;
 import com.yangshenglong.buycarapp.home.second.SecondBannerAty;
+import com.yangshenglong.buycarapp.home.second.zhengbei.ZbAty;
 import com.yangshenglong.buycarapp.okhttp.NetTool;
 import com.yangshenglong.buycarapp.okhttp.onHttpCallback;
 import com.yangshenglong.buycarapp.staicclass.StaticClass;
@@ -20,12 +22,13 @@ import java.util.ArrayList;
  * Created by VolleyYang on 17/1/24.
  */
 
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private Banner  banner;
     private ArrayList<String> pics = new ArrayList<>();
     private BannerBean  data;
     private Intent intent ;
     private String bannerWeb;
+    private ImageView imgZb;
 
     @Override
     public int setLayout() {
@@ -35,6 +38,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void initView(View view) {
         banner = (Banner) view.findViewById(R.id.banner);
+        imgZb = (ImageView) view.findViewById(R.id.img_zb);
     }
 
     @Override
@@ -49,6 +53,8 @@ public class HomeFragment extends BaseFragment {
 
         //Banner  网络解析
         BannerInternet();
+
+        imgZb.setOnClickListener(this);
 
     }
 
@@ -102,5 +108,15 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.img_zb:
+                intent = new Intent(getContext(), ZbAty.class);
+                startActivity(intent);
+                break;
+        }
     }
 }

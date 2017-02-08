@@ -3,14 +3,11 @@ package com.yangshenglong.buycarapp;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.RadioButton;
 
 import com.yangshenglong.buycarapp.base.BaseActivity;
-import com.yangshenglong.buycarapp.home.HomeFragment;
+import com.yangshenglong.buycarapp.home.first.HomeFragment;
 import com.yangshenglong.buycarapp.my.MyFragment;
 import com.yangshenglong.buycarapp.share.ShareFragment;
 
