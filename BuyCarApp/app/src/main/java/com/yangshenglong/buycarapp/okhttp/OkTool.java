@@ -13,8 +13,10 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.Cache;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -24,6 +26,8 @@ public class OkTool implements NetInterface {
     private OkHttpClient mClient;
     private Handler mHandler = new Handler(Looper.getMainLooper());
     private Gson mGson;
+    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
     public OkTool() {
         super();
         mGson = new Gson();
@@ -76,6 +80,39 @@ public class OkTool implements NetInterface {
                         callback.onError(e);
                     }
                 });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String str = response.body().string();
+                final T result = mGson.fromJson(str,tClass);
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        callback.onSuccess(result);
+                    }
+                });
+            }
+        });
+    }
+
+    public <T> void postJson(String url, String json, final Class<T> tClass,final onHttpCallback<T> callback) {
+        RequestBody body = RequestBody.create(JSON, json);
+        Request request = new Request.Builder().url(url).post(body).build();
+
+
+        Test test = new Test();
+        test.setAccount("11324134234");
+
+        Gson gson = new Gson();
+        String testJson = gson.toJson(test);
+
+
+
+        mClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                //请求失败
             }
 
             @Override
