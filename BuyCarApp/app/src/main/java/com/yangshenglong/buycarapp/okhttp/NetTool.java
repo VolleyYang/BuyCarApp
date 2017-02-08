@@ -38,12 +38,11 @@ public class NetTool implements NetInterface {
         mInterface.startRequest(url,callback);
     }
 
-    @Override
-    public <T> void startRequest(String url, Class<T> tClass, onHttpCallback<T> callback) {
-        mInterface.startRequest(url,tClass,callback);
-    }
 
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    @Override
+    public <T> void startRequest(String url, String json, Class<T> tClass, onHttpCallback<T> callback) {
+        mInterface.startRequest(url,json,tClass,callback);
+    }
 
 
 }

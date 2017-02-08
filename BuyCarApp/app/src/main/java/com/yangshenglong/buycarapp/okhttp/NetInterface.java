@@ -6,5 +6,6 @@ package com.yangshenglong.buycarapp.okhttp;
 public interface NetInterface {
     void startRequest(String url, onHttpCallback<String> callback);
 
-    <T> void startRequest(String url, Class<T> tClass, onHttpCallback<T> callback);
+
+    <T> void startRequest(String url, String json,Class<T> tClass, onHttpCallback<T> callback);
 }

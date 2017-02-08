@@ -6,6 +6,15 @@ package com.yangshenglong.buycarapp.okhttp;
 
 public class Test {
     private String account;
+    private String accountPassword;
+
+    public String getAccountPassword() {
+        return accountPassword;
+    }
+
+    public void setAccountPassword(String accountPassword) {
+        this.accountPassword = accountPassword;
+    }
 
     public String getAccount() {
         return account;

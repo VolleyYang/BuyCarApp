@@ -68,47 +68,11 @@ public class OkTool implements NetInterface {
 
     }
 
-    @Override
-    public <T> void startRequest(String url, final Class<T> tClass, final onHttpCallback<T> callback) {
-        Request request = new Request.Builder().url(url).build();
-        mClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, final IOException e) {
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        callback.onError(e);
-                    }
-                });
-            }
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String str = response.body().string();
-                final T result = mGson.fromJson(str,tClass);
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        callback.onSuccess(result);
-                    }
-                });
-            }
-        });
-    }
 
-    public <T> void postJson(String url, String json, final Class<T> tClass,final onHttpCallback<T> callback) {
+    public <T> void startRequest(String url, String json, final Class<T> tClass,final onHttpCallback<T> callback) {
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder().url(url).post(body).build();
-
-
-        Test test = new Test();
-        test.setAccount("11324134234");
-
-        Gson gson = new Gson();
-        String testJson = gson.toJson(test);
-
-
-
         mClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
