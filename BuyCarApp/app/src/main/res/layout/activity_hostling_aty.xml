@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_zb_aty"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:layout_weight="7"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/rbt_sx"
+            android:drawableTop="@drawable/selector_home"
+            android:checked="true"
+            android:textStyle="bold"
+            android:text="手续员"
+            android:textColor="@drawable/color_radiobutton"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/rbt_pg"
+            android:text="评估师"
+            android:textStyle="bold"
+            android:textColor="@drawable/color_radiobutton"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_share"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/rbt_zb"
+            android:text="整备员"
+            android:textStyle="bold"
+            android:textColor="@drawable/color_radiobutton"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_mine"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/rbt_jl"
+            android:text="经理"
+            android:textStyle="bold"
+            android:textColor="@drawable/color_radiobutton"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_mine"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/rbt_yy"
+            android:text="运营专员"
+            android:textStyle="bold"
+            android:textColor="@drawable/color_radiobutton"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_mine"
+            android:layout_weight="1"
+            android:button="@null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/replace"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

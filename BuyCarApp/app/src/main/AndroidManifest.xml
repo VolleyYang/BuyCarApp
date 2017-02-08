@@ -22,8 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".home.second.SecondBannerAty"></activity>
-        <activity android:name=".home.second.zhengbei.ZbAty"></activity>
+        <activity android:name=".home.second.SecondBannerAty" />
+        <activity android:name=".home.second.zhengbei.HostlingAty" />
+        <activity android:name=".home.second.baoyang.UpkeepAty" />
+        <activity android:name=".home.second.cheliang.CarAty" />
+        <activity android:name=".home.second.fabu.IssueAty" />
+        <activity android:name=".home.second.haoche.MotorAty" />
+        <activity android:name=".home.second.hetong.ContractAty" />
+        <activity android:name=".home.second.jingzhun.AccurateAty" />
+        <activity android:name=".home.second.peizi.ConfigurationAty" />
+        <activity android:name=".home.second.shangjia.MerchantPosAty" />
+        <activity android:name=".home.second.wode.MyWdAty" />
+        <activity android:name=".home.second.wutong.UtonAty"></activity>
     </application>
 
 </manifest>
